@@ -2228,8 +2228,9 @@ int main(int argc, char **argv)
     register_exit(ffmpeg_cleanup);
     // win32
     setvbuf(stderr,NULL,_IONBF,0); /* win32 runtime needs this */
-    //
+    //设置跳过日志重复
     av_log_set_flags(AV_LOG_SKIP_REPEATED);
+    // 解析日志选项
     parse_loglevel(argc, argv, options);
 
 #if CONFIG_AVDEVICE
