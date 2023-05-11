@@ -2222,13 +2222,13 @@ int main(int argc, char **argv)
 {
     int ret;
     BenchmarkTimeStamps ti;
-
+    // Windwos初始化动态库
     init_dynload();
-
+    // 注册清理
     register_exit(ffmpeg_cleanup);
-
+    // win32
     setvbuf(stderr,NULL,_IONBF,0); /* win32 runtime needs this */
-
+    //
     av_log_set_flags(AV_LOG_SKIP_REPEATED);
     parse_loglevel(argc, argv, options);
 
